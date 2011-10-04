@@ -1,0 +1,286 @@
+object f_mp3player: Tf_mp3player
+  Left = 185
+  Height = 383
+  Top = 227
+  Width = 542
+  Caption = 'mp3player'
+  ClientHeight = 383
+  ClientWidth = 542
+  OnCreate = FormCreate
+  LCLVersion = '0.9.30.2RC1'
+  object lb_soundmixer: TComboBox
+    Left = 72
+    Height = 21
+    Top = 1
+    Width = 378
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    DropDownCount = 20
+    ItemHeight = 13
+    Style = csDropDownList
+    TabOrder = 0
+  end
+  object Label1: TLabel
+    Left = 8
+    Height = 14
+    Top = 8
+    Width = 58
+    Caption = 'Soud mixer:'
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 29
+    Height = 14
+    Top = 32
+    Width = 21
+    Caption = 'File:'
+    ParentColor = False
+  end
+  object e_fn: TEdit
+    Left = 72
+    Height = 21
+    Top = 31
+    Width = 346
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 1
+  end
+  object b_fn: TButton
+    Left = 426
+    Height = 21
+    Top = 31
+    Width = 24
+    Anchors = [akTop, akRight]
+    Caption = '...'
+    OnClick = b_fnClick
+    TabOrder = 2
+  end
+  object b_play: TButton
+    Left = 458
+    Height = 25
+    Top = 0
+    Width = 75
+    Anchors = [akTop, akRight]
+    Caption = 'Play'
+    OnClick = b_playClick
+    TabOrder = 3
+  end
+  object e_log: TMemo
+    Left = 0
+    Height = 76
+    Top = 307
+    Width = 542
+    Align = alBottom
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 4
+  end
+  object Label3: TLabel
+    Left = 24
+    Height = 14
+    Top = 64
+    Width = 35
+    Caption = 'Volume'
+    ParentColor = False
+  end
+  object Panel3: TPanel
+    Left = 73
+    Height = 16
+    Top = 64
+    Width = 170
+    ClientHeight = 16
+    ClientWidth = 170
+    TabOrder = 5
+    object psp_volume: TPairSplitter
+      Left = 1
+      Height = 14
+      Top = 1
+      Width = 168
+      Align = alClient
+      OnResize = psp_volumeResize
+      Position = 90
+      object psp_volume_left: TPairSplitterSide
+        Cursor = crArrow
+        Left = 0
+        Height = 14
+        Top = 0
+        Width = 90
+        ClientWidth = 90
+        ClientHeight = 14
+        OnResize = psp_volume_leftResize
+        object Panel1: TPanel
+          Left = 0
+          Height = 14
+          Top = 0
+          Width = 90
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clMaroon
+          ParentColor = False
+          TabOrder = 0
+        end
+      end
+      object psp_volume_right: TPairSplitterSide
+        Cursor = crArrow
+        Left = 95
+        Height = 14
+        Top = 0
+        Width = 73
+        ClientWidth = 73
+        ClientHeight = 14
+        object Panel2: TPanel
+          Left = 0
+          Height = 14
+          Top = 0
+          Width = 73
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clInfoBk
+          ParentColor = False
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object cb_fade: TCheckBox
+    Left = 15
+    Height = 17
+    Top = 87
+    Width = 44
+    Caption = 'Fade'
+    TabOrder = 6
+  end
+  object b_stop: TButton
+    Left = 458
+    Height = 25
+    Top = 32
+    Width = 75
+    Anchors = [akTop, akRight]
+    Caption = 'Stop'
+    TabOrder = 7
+  end
+  object Panel4: TPanel
+    Left = 73
+    Height = 16
+    Top = 88
+    Width = 170
+    ClientHeight = 16
+    ClientWidth = 170
+    TabOrder = 8
+    object psp_fade: TPairSplitter
+      Left = 1
+      Height = 14
+      Top = 1
+      Width = 168
+      Align = alClient
+      Position = 90
+      object PairSplitterSide3: TPairSplitterSide
+        Cursor = crArrow
+        Left = 0
+        Height = 14
+        Top = 0
+        Width = 90
+        ClientWidth = 90
+        ClientHeight = 14
+        object Panel5: TPanel
+          Left = 0
+          Height = 14
+          Top = 0
+          Width = 90
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clMaroon
+          ParentColor = False
+          TabOrder = 0
+        end
+      end
+      object PairSplitterSide4: TPairSplitterSide
+        Cursor = crArrow
+        Left = 95
+        Height = 14
+        Top = 0
+        Width = 73
+        ClientWidth = 73
+        ClientHeight = 14
+        object Panel6: TPanel
+          Left = 0
+          Height = 14
+          Top = 0
+          Width = 73
+          Align = alClient
+          BevelOuter = bvNone
+          Color = clInfoBk
+          ParentColor = False
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object Panel7: TPanel
+    Left = 0
+    Height = 179
+    Top = 128
+    Width = 542
+    Align = alBottom
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    BevelOuter = bvNone
+    ClientHeight = 179
+    ClientWidth = 542
+    TabOrder = 9
+    object Panel8: TPanel
+      Left = 456
+      Height = 179
+      Top = 0
+      Width = 86
+      Align = alRight
+      ClientHeight = 179
+      ClientWidth = 86
+      TabOrder = 0
+      object b_add: TButton
+        Left = 8
+        Height = 25
+        Top = 9
+        Width = 75
+        Caption = 'Add'
+        OnClick = b_addClick
+        TabOrder = 0
+      end
+      object b_remove: TButton
+        Left = 8
+        Height = 25
+        Top = 41
+        Width = 75
+        Caption = 'Rmv'
+        OnClick = b_removeClick
+        TabOrder = 1
+      end
+    end
+    object lb_files: TListBox
+      Left = 0
+      Height = 179
+      Top = 0
+      Width = 456
+      Align = alClient
+      ItemHeight = 0
+      TabOrder = 1
+    end
+  end
+  object pb_prog: TProgressBar
+    Left = 8
+    Height = 8
+    Top = 112
+    Width = 525
+    Anchors = [akTop, akLeft, akRight]
+    Smooth = True
+    TabOrder = 10
+  end
+  object d_fn: TOpenDialog
+    left = 376
+    top = 8
+  end
+  object Tick: TTimer
+    Interval = 150
+    OnTimer = TickTimer
+    left = 336
+    top = 8
+  end
+end
