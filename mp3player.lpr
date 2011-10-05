@@ -7,7 +7,7 @@ uses
   cthreads,
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
-  Forms, uf_mp3player, u_dsutils;
+  Forms, uf_mp3player, u_dsutils, inifilesex;
 
 {$R *.res}
 
