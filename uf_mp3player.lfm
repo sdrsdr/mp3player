@@ -37,6 +37,7 @@ object f_mp3player: Tf_mp3player
     Width = 75
     Anchors = [akTop, akRight]
     Caption = 'Play'
+    Enabled = False
     OnClick = b_playClick
     TabOrder = 1
   end
@@ -49,6 +50,7 @@ object f_mp3player: Tf_mp3player
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 2
+    Visible = False
   end
   object Label3: TLabel
     Left = 24
@@ -72,7 +74,6 @@ object f_mp3player: Tf_mp3player
       Top = 1
       Width = 168
       Align = alClient
-      OnResize = psp_volumeResize
       Position = 90
       object psp_volume_left: TPairSplitterSide
         Cursor = crArrow
@@ -123,6 +124,7 @@ object f_mp3player: Tf_mp3player
     Top = 55
     Width = 44
     Caption = 'Fade'
+    OnChange = cb_fadeChange
     TabOrder = 4
   end
   object b_stop: TButton
@@ -132,6 +134,7 @@ object f_mp3player: Tf_mp3player
     Width = 75
     Anchors = [akTop, akRight]
     Caption = 'Stop'
+    OnClick = b_stopClick
     TabOrder = 5
   end
   object Panel4: TPanel
@@ -149,7 +152,7 @@ object f_mp3player: Tf_mp3player
       Width = 168
       Align = alClient
       Position = 90
-      object PairSplitterSide3: TPairSplitterSide
+      object psp_fade_left: TPairSplitterSide
         Cursor = crArrow
         Left = 0
         Height = 14
@@ -157,6 +160,7 @@ object f_mp3player: Tf_mp3player
         Width = 90
         ClientWidth = 90
         ClientHeight = 14
+        OnResize = psp_fade_leftResize
         object Panel5: TPanel
           Left = 0
           Height = 14
@@ -169,7 +173,7 @@ object f_mp3player: Tf_mp3player
           TabOrder = 0
         end
       end
-      object PairSplitterSide4: TPairSplitterSide
+      object psp_fade_right: TPairSplitterSide
         Cursor = crArrow
         Left = 95
         Height = 14
@@ -229,6 +233,15 @@ object f_mp3player: Tf_mp3player
         OnClick = b_removeClick
         TabOrder = 1
       end
+      object cb_autonext: TCheckBox
+        Left = 8
+        Height = 17
+        Top = 72
+        Width = 66
+        Caption = 'AutoNext'
+        OnChange = cb_autonextChange
+        TabOrder = 2
+      end
     end
     object lb_files: TListBox
       Left = 0
@@ -238,6 +251,7 @@ object f_mp3player: Tf_mp3player
       Align = alClient
       ItemHeight = 0
       OnDblClick = lb_filesDblClick
+      OnSelectionChange = lb_filesSelectionChange
       TabOrder = 1
     end
   end
@@ -247,6 +261,7 @@ object f_mp3player: Tf_mp3player
     Top = 80
     Width = 525
     Anchors = [akTop, akLeft, akRight]
+    Max = 1000
     Smooth = True
     TabOrder = 8
   end

@@ -1,4 +1,5 @@
 *.exe
+*.exe.*
 *.lpi
 *.mp3
 lib

@@ -15,7 +15,7 @@ Type
 		isDirty:Boolean;
 		procedure markDirty;
 		
-		function ReadInteger (const Section, Ident:String; const  Default,min,max: Longint): Longint; virtual;
+		function ReadInteger (const Section, Ident:String; const  Default,min,max: Longint): Longint; virtual;overload;
 		
 		procedure UpdateFile; override;
 		procedure UpdateFileIfDirty;
